@@ -1,0 +1,20 @@
+{
+  "name": "geeh/trefelin-bgc",
+  "description": "Trefelin Boys and Girls Club Site",
+  "minimum-stability": "stable",
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "Gary Hockin",
+      "email": "ghockin@twilio.com"
+    }
+  ],
+  "require": {
+    "guzzlehttp/guzzle": "6.3.3",
+    "google/apiclient": "^2.0",
+    "asimlqt/php-google-spreadsheet-client": "3.0.*",
+    "ext-dom": "*",
+    "ext-libxml": "*",
+    "twilio/sdk": "^5.37"
+  }
+}
