@@ -12,6 +12,6 @@ Girls Club as my quick fix :D).
 
 I'll take any PR that makes the site look any better!
 
-I am so terrible at this stuff, you're help is hugely appreciated.
+I am so terrible at this stuff, your help is hugely appreciated.
 
 X Gary
