@@ -1,0 +1,27 @@
+{% extends "template.twig" %}
+
+{% block main %}
+    <div class="jumbotron" style="margin-top:25px;">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm">
+                    <h2>Fixtures & Results</h2>
+                    <table class="table table-striped table-dark">
+                        <tbody>
+                        {% for fixture in fixtures %}
+                            <tr class="table-{{ resultParser.color(fixture) }}">
+                                <td>{{ fixture.date }}</td>
+                                <td>{{ fixture.time }}</td>
+                                <td align="right">{{ fixture.home }}</td>
+                                <td align="center">vs</td>
+                                <td>{{ fixture.away }}</td>
+                                <td>{{ fixture.result }}</td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
