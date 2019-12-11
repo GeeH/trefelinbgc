@@ -10,4 +10,10 @@ return function (App $app) {
     $app->get('/fixtures', \App\Handler\FixturesPageHandler::class)
         ->setName('fixtures');
 
+    $app->get('/about', \App\Handler\AboutPageHandler::class)
+        ->setName('about');
+
+    $app->get('/contact', \App\Handler\ContactPageHandler::class)
+        ->setName('contact');
+
 };
