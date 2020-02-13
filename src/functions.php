@@ -19,7 +19,7 @@ function getFixtures($getAll = false): array
             $row['date'] = $row['date']->format('jS M');
             $fixtures[] = $row;
 
-            if (count($fixtures) === 3 && !$getAll) {
+            if (count($fixtures) === 1 && !$getAll) {
                 break;
             }
         }
@@ -38,7 +38,7 @@ function getFixtures($getAll = false): array
             $results[] = $row;
         }
         if (count($results) === 3 && !$getAll) {
-            break;
+            return ['fixtures' => $fixtures, 'results' => []];
         }
     }
 

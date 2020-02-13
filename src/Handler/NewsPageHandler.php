@@ -9,7 +9,7 @@ use Psr\Log\LoggerInterface;
 use Slim\Psr7\Response;
 use Twig\Environment;
 
-class AboutPageHandler implements RequestHandlerInterface
+class NewsPageHandler implements RequestHandlerInterface
 {
     private $logger;
 
@@ -23,12 +23,10 @@ class AboutPageHandler implements RequestHandlerInterface
 
     public function handle(ServerRequestInterface $request): ResponseInterface
     {
-
-
-        $this->logger->info('Home page handler dispatched');
+        $this->logger->info('News page handler dispatched');
         $response = new Response();
         $response->getBody()->write(
-            $this->twig->render('about.twig')
+            $this->twig->render('news.twig')
         );
 
         return $response;

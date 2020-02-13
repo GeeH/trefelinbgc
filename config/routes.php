@@ -7,11 +7,11 @@ return function (App $app) {
     $app->get('/', \App\Handler\HomePageHandler::class)
         ->setName('home');
 
-    $app->get('/fixtures', \App\Handler\FixturesPageHandler::class)
-        ->setName('fixtures');
+    $app->get('/first-team', \App\Handler\FirstTeamPageHandler::class)
+        ->setName('first-team');
 
-    $app->get('/about', \App\Handler\AboutPageHandler::class)
-        ->setName('about');
+    $app->get('/news', \App\Handler\NewsPageHandler::class)
+        ->setName('news');
 
     $app->get('/contact', \App\Handler\ContactPageHandler::class)
         ->setName('contact');

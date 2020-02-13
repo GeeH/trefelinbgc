@@ -11,7 +11,7 @@ use Twig\Environment;
 
 require_once(__DIR__ . '/../functions.php');
 
-class FixturesPageHandler implements RequestHandlerInterface
+class FirstTeamPageHandler implements RequestHandlerInterface
 {
     private $logger;
 
@@ -30,7 +30,7 @@ class FixturesPageHandler implements RequestHandlerInterface
         $this->logger->info('Fixtures page handler dispatched');
         $response = new Response();
         $response->getBody()->write(
-            $this->twig->render('fixtures.twig', getFixtures(true))
+            $this->twig->render('first-team.twig', getFixtures(true))
         );
 
         return $response;
