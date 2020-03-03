@@ -3,9 +3,9 @@
 use Google\Spreadsheet\DefaultServiceRequest;
 use Google\Spreadsheet\ServiceRequestFactory;
 
-function getFixtures($getAll = false): array
+function getFixtures(bool $getAll = false, int $sheet = 0): array
 {
-    $sheet = getGoogleSheet();
+    $sheet = getGoogleSheet($sheet);
 
     $fixtures = [];
     foreach ($sheet->getListFeed([])->getEntries() as $entry) {
@@ -45,7 +45,7 @@ function getFixtures($getAll = false): array
     return ['fixtures' => $fixtures, 'results' => $results];
 }
 
-function getGoogleSheet(): \Google\Spreadsheet\Worksheet
+function getGoogleSheet(int $sheet): \Google\Spreadsheet\Worksheet
 {
     if (!getenv('GOOGLE_AUTH_CONFIG')) {
         putenv('GOOGLE_AUTH_CONFIG=' . file_get_contents(__DIR__ . '/../client_secret.json'));
@@ -70,7 +70,7 @@ function getGoogleSheet(): \Google\Spreadsheet\Worksheet
         ->getByTitle('Trefelin Fixtures');
 
     $worksheets = $spreadsheet->getWorksheetFeed()->getEntries();
-    $worksheet = $worksheets[0];
+    $worksheet = $worksheets[$sheet];
 
     return $worksheet;
 }

@@ -11,7 +11,7 @@ use Twig\Environment;
 
 require_once(__DIR__ . '/../functions.php');
 
-class FirstTeamPageHandler implements RequestHandlerInterface
+class JuniorTeamHandler implements RequestHandlerInterface
 {
     private $logger;
 
@@ -25,17 +25,11 @@ class FirstTeamPageHandler implements RequestHandlerInterface
 
     public function handle(ServerRequestInterface $request): ResponseInterface
     {
-        $this->logger->info('Fixtures page handler dispatched');
+        $this->logger->info('Junior page handler dispatched');
         $response = new Response();
         $response->getBody()->write(
-            $this->twig->render('team.twig',
-                array_merge(getFixtures(true), [
-                    'team_name' => 'First Team',
-                    'manager' => 'Richard Ryan',
-                    'home_kit' => 'Red Shirts, Black Shorts',
-                    'away_kit' =>'Grey Shirts, Grey Shorts',
-                ])
-        ));
+            $this->twig->render('junior.twig')
+        );
 
         return $response;
     }
